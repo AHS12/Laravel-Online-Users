@@ -11,27 +11,27 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                              <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">User</th>
-                                <th scope="col">Method</th>
-                                <th scope="col">Url</th>
-                                <th scope="col">Referer</th>
-                                <th scope="col">Languages</th>
-                                <th scope="col">Useragent</th>
-                                {{-- <th scope="col">Headers</th> --}}
-                                <th scope="col">Device</th>
-                                <th scope="col">IP</th>
-                                <th scope="col">Browser</th>
-                                <th scope="col">Created At</th>
-                                <th scope="col">Updated At</th>
-                              </tr>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">User</th>
+                                    <th scope="col">Method</th>
+                                    <th scope="col">Url</th>
+                                    <th scope="col">Referer</th>
+                                    <th scope="col">Languages</th>
+                                    <th scope="col">Useragent</th>
+                                    {{-- <th scope="col">Headers</th> --}}
+                                    <th scope="col">Device</th>
+                                    <th scope="col">IP</th>
+                                    <th scope="col">Browser</th>
+                                    <th scope="col">Created At</th>
+                                    <th scope="col">Updated At</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 @foreach ($logs as $log)
-                                    <tr>
+                                <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{$log->user->name}}</td>
+                                    <td>{{$log->user['name']}}</td>
                                     <td>{{$log->method}}</td>
                                     <td>{{$log->url}}</td>
                                     <td>{{$log->referer}}</td>
@@ -43,17 +43,25 @@
                                     <td>{{$log->browser}}</td>
                                     <td>{{$log->created_at}}</td>
                                     <td>{{$log->updated_at}}</td>
-                                    </tr>
+                                </tr>
                                 @endforeach
-                              
-                             
+
+
                             </tbody>
-                          </table>
+                        </table>
+
                     </div>
-                    
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            {{$logs->links()}}
+                        </ul>
+                    </nav>
+
                 </div>
+
             </div>
         </div>
     </div>
+
 </div>
 @endsection

@@ -8,6 +8,9 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Jenssegers\Agent\Agent;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -64,10 +67,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $agent = new Agent();
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'last_login_at' => Carbon::now()->toDateTimeString(),
+            'last_login_ip' => request()->getClientIp(),
+            'last_login_browser'    => $agent->browser(),
+            'last_login_platform'    => $agent->platform(),
         ]);
     }
 }

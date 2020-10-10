@@ -24,7 +24,7 @@ class UserActivityController extends Controller
     }
 
     public function userLogs(Request $request){
-        $logs = UserLogModel::orderBy('created_at','DESC')->get();
+        $logs = UserLogModel::orderBy('created_at','DESC')->with('user')->paginate(15, ['*'], 'page');
         //dd($logs);
 
         $data = [

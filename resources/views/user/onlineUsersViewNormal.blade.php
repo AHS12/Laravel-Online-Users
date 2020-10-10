@@ -17,6 +17,7 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">IP</th>
                                 <th scope="col">Browser</th>
+                                <th scope="col">Platform</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -25,9 +26,9 @@
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
-                                    {{-- @dd($user->isOnline()) --}}
-                                    <td>{{$user->visit()->ip}}</td>
-                                    <td>{{$user->visit()->browser}}</td>
+                                    <td>{{$user->last_login_ip}}</td>
+                                    <td>{{$user->last_login_browser}}</td>
+                                    <td>{{$user->last_login_platform}}</td>
                                     </tr>
                                 @endforeach
                               
