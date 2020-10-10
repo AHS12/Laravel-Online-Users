@@ -11,3 +11,7 @@ A Toy project to Track Online users. Trace users via IP, platform, etc. User Act
 - [Agent](https://github.com/jenssegers/agent)
 
 - [Visitor](https://github.com/shetabit/visitor)
+
+## License
+
+license. Please see the [license file](license.md) for more information.
