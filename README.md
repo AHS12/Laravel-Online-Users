@@ -14,4 +14,4 @@ A Toy project to Track Online users. Trace users via IP, platform, etc. User Act
 
 ## License
 
-license. Please see the [license file](license.md) for more information.
+license. Please see the [license file](LICENSE) for more information.
