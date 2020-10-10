@@ -49,6 +49,12 @@
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('users/logs') }}">User Logs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('log-viewer') }}">APP Logs</a>
+                        </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

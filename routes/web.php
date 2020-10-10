@@ -13,10 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => ['auth','activitytLog']], function () {
+//activitylog middleware is for auto logging
+
+
+//default method users
+Route::get('/users', [App\Http\Controllers\UserActivityController::class, 'index']);
+
+//package users
+Route::get('/users/logs',[App\Http\Controllers\UserActivityController::class, 'userLogs']);
+ 
+});
+

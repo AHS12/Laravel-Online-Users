@@ -227,6 +227,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {{ Route::is('log-viewer::dashboard') ? 'active' : '' }}">
+                    <a href="{{url('users') }}" class="nav-link">
+                        <i class="fa fa-arrow-left"></i> @lang('Return')
+                    </a>
+                </li>
+                <li class="nav-item {{ Route::is('log-viewer::dashboard') ? 'active' : '' }}">
                     <a href="{{ route('log-viewer::dashboard') }}" class="nav-link">
                         <i class="fa fa-dashboard"></i> @lang('Dashboard')
                     </a>
