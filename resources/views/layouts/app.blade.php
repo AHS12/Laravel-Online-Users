@@ -49,6 +49,9 @@
                                 </li>
                             @endif
                         @else
+                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('users') }}">Online Users</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('users/logs') }}">User Logs</a>
                         </li>
